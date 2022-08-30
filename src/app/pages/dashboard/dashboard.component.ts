@@ -8,8 +8,10 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class DashboardComponent implements OnInit {
   groups: {
+    groupId: string;
     name: string;
     description: string;
+    ownerAddress: string;
     memberships: { name: string; walletAddress: string }[];
   }[] = [];
 

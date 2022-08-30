@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ApiService } from 'src/app/services/api.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'group-details',
@@ -8,14 +9,24 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class GroupDetailsComponent implements OnInit {
   group: {
+    groupId: string;
     name: string;
     description: string;
+    ownerAddress: string;
     memberships: { name: string; walletAddress: string }[];
-  } = { name: '', description: '', memberships: [] };
+  } = {
+    groupId: '',
+    name: '',
+    description: '',
+    ownerAddress: '',
+    memberships: [],
+  };
 
-  constructor(private apiService: ApiService) {}
+  constructor(private apiService: ApiService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.group = this.apiService.getGroupDetails('group-id-1');
+    this.group = this.apiService.getGroupDetails(
+      this.route.snapshot.paramMap.get('id')!
+    );
   }
 }
