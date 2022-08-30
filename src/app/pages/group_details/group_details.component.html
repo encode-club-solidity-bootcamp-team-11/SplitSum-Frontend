@@ -1,10 +1,61 @@
-<section class="group-details">
-  <p>Name: {{ group.name }}</p>
-  <p>Description: {{ group.description }}</p>
-  <ul>
-    <li *ngFor="let item of group.memberships">
-      <span>Name: {{ item.name }}</span>
-      <span>Wallet Address: {{ item.walletAddress }}</span>
-    </li>
-  </ul>
+<section class="bg-light py-4 my-5">
+  <div class="container">
+    <div class="row">
+      <group-box [group]="group"></group-box>
+    </div>
+  </div>
+</section>
+
+<section class="bg-light py-4 my-5">
+  <div class="container">
+    <div class="row">
+      <h2>Transactions</h2>
+      <hr />
+      <ul>
+        <li class="list-unstyled row mt-4">
+          <div class="col-8">
+            <div>
+              <span class="fw-bold">Samnang</span> paid on beers last night
+            </div>
+            <span class="text-muted me-4">2022-10-15</span>
+            <span><a routerLink="/groups/group-1">Friend Hangouts</a></span>
+          </div>
+          <div class="col-4">$100.00</div>
+        </li>
+
+        <li class="list-unstyled row mt-4">
+          <div class="col-8">
+            <div>
+              <span class="fw-bold">Samnang</span> paid on beers last night
+            </div>
+            <span class="text-muted me-4">2022-10-15</span>
+            <span><a routerLink="/groups/group-1">Friend Hangouts</a></span>
+          </div>
+          <div class="col-4">$100.00</div>
+        </li>
+
+        <li class="list-unstyled row mt-4">
+          <div class="col-8">
+            <div>
+              <span class="fw-bold">Samnang</span> paid on beers last night
+            </div>
+            <span class="text-muted me-4">2022-10-15</span>
+            <span><a routerLink="/groups/group-1">Friend Hangouts</a></span>
+          </div>
+          <div class="col-4">$100.00</div>
+        </li>
+
+        <li class="list-unstyled row mt-4">
+          <div class="col-8">
+            <div>
+              <span class="fw-bold">Samnang</span> paid on beers last night
+            </div>
+            <span class="text-muted me-4">2022-10-15</span>
+            <span><a routerLink="/groups/group-1">Friend Hangouts</a></span>
+          </div>
+          <div class="col-4">$100.00</div>
+        </li>
+      </ul>
+    </div>
+  </div>
 </section>

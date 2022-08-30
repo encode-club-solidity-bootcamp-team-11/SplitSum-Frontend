@@ -8,13 +8,12 @@ import { environment } from 'src/environments/environment';
 })
 export class ApiService {
   apiUrl = environment.apiAddress;
-
-  constructor() {}
-
-  getGroupDetails(groupId: string) {
-    return {
+  GROUPS = {
+    'group-1': {
+      groupId: 'group-1',
       name: 'Friend Hangouts',
-      description: 'A description',
+      description: 'Dolor aut molestiae ut et non consequatur',
+      ownerAddress: 'xyz',
       memberships: [
         {
           name: 'John',
@@ -25,39 +24,34 @@ export class ApiService {
           walletAddress: '238672783628782638726378',
         },
       ],
-    };
+    },
+    'group-2': {
+      groupId: 'group-2',
+      name: 'Paris Trip',
+      ownerAddress: 'abc',
+      description: 'Adipisci et quibusdam est veritatis',
+      memberships: [
+        {
+          name: 'John',
+          walletAddress: '238672783628782638726378',
+        },
+        {
+          name: 'Jane',
+          walletAddress: '238672783628782638726378',
+        },
+      ],
+    },
+  };
+
+  constructor() {}
+
+  getGroupDetails(groupId: string) {
+    return groupId == 'group-1'
+      ? this.GROUPS['group-1']
+      : this.GROUPS['group-2'];
   }
 
   listGroups() {
-    return [
-      {
-        name: 'Friend Hangouts',
-        description: 'A description',
-        memberships: [
-          {
-            name: 'John',
-            walletAddress: '238672783628782638726378',
-          },
-          {
-            name: 'Dara',
-            walletAddress: '238672783628782638726378',
-          },
-        ],
-      },
-      {
-        name: 'Paris Trip',
-        description: 'A description',
-        memberships: [
-          {
-            name: 'John',
-            walletAddress: '238672783628782638726378',
-          },
-          {
-            name: 'Jane',
-            walletAddress: '238672783628782638726378',
-          },
-        ],
-      },
-    ];
+    return [this.GROUPS['group-1'], this.GROUPS['group-2']];
   }
 }

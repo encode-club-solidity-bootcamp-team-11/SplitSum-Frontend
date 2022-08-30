@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-header">
+    <a routerLink="/groups/{{ group.groupId }}">{{ group.name }}</a>
+  </div>
+  <div class="card-body">
+    <div class="text-center">
+      <p class="card-text">You are owed</p>
+      <h5 class="card-title text-success">$150.00</h5>
+    </div>
+
+    <p class="card-text">{{ group.description }}</p>
+
+    <div class="card-footer text-muted">3 members</div>
+  </div>
+</div>

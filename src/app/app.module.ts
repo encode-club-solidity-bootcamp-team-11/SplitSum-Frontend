@@ -7,8 +7,16 @@ import { AppComponent } from './app.component';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { GroupDetailsComponent } from './pages/group_details/group_details.component';
 
+import { GroupBoxComponent } from './components/group_box/group_box.component';
+
 @NgModule({
-  declarations: [AppComponent, DashboardComponent, GroupDetailsComponent],
+  declarations: [
+    AppComponent,
+    DashboardComponent,
+    GroupDetailsComponent,
+
+    GroupBoxComponent,
+  ],
   imports: [BrowserModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent],
