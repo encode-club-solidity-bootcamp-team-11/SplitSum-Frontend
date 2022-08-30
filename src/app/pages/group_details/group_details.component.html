@@ -1,0 +1,10 @@
+<section class="group-details">
+  <p>Name: {{ group.name }}</p>
+  <p>Description: {{ group.description }}</p>
+  <ul>
+    <li *ngFor="let item of group.memberships">
+      <span>Name: {{ item.name }}</span>
+      <span>Wallet Address: {{ item.walletAddress }}</span>
+    </li>
+  </ul>
+</section>

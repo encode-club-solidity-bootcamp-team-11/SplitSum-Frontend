@@ -1,0 +1,39 @@
+<section class="py-5 text-center container">
+  <div class="row py-lg-5">
+    <div class="col-lg-6 col-md-8 mx-auto">
+      <h1 class="fw-light">SplitSum</h1>
+      <p class="lead text-muted">
+        Dolor nostrum distinctio neque vitae similique ut quia nulla dolor
+        soluta eum sed at. Adipisci et quibusdam est veritatis est mollitia
+        aperiam modi. Ut dolores cum qui ut nam in fugiat quod voluptate rerum
+        dolor optio. Sit ut qui praesentium. Amet fuga rerum sit rerum placeat
+        reiciendis enim ut sunt dolorem quo praesentium. Dolor aut molestiae ut
+        et non consequatur occaecati suscipit perspiciatis quo a aut rerum aut.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="bg-light py-4 my-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-6 col-lg-4" *ngFor="let item of groups">
+        <div class="card my-3">
+          <div class="card-body">
+            <h3 class="card-title">
+              <a href="/groups/123" class="text-secondary">{{ item.name }}</a>
+            </h3>
+            <p class="card-text">{{ item.description }}</p>
+            <div
+              class="col-md-6 col-lg-4"
+              *ngFor="let membership of item.memberships"
+            >
+              <span>Name: {{ membership.name }} </span>
+              <span>Wallet Address: {{ membership.walletAddress }} </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
