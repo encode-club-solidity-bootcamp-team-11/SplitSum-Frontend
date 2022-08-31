@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Signer } from 'ethers';
 import { ApiService } from 'src/app/services/api.service';
+import { BlockchainService } from 'src/app/services/blockchain.service';
 
 @Component({
   selector: 'dashboard',
@@ -14,10 +16,34 @@ export class DashboardComponent implements OnInit {
     ownerAddress: string;
     memberships: { name: string; walletAddress: string }[];
   }[] = [];
+  accountInfo: { walletAddress: string } | undefined = undefined;
 
-  constructor(private apiService: ApiService) {}
+  constructor(
+    private apiService: ApiService,
+    private blockchainService: BlockchainService
+  ) {}
 
-  ngOnInit(): void {
+  async ngOnInit(): Promise<void> {
     this.groups = this.apiService.listGroups();
+    if (await this.blockchainService.isAccountConnected()) {
+      const account = await this.blockchainService.accountInfo();
+      this.assignAccountInfo(account);
+    }
+  }
+
+  async Connect() {
+    const account = await this.blockchainService.connectAccount();
+
+    this.assignAccountInfo(account);
+  }
+
+  accountConnected(): boolean {
+    return this.accountInfo != undefined;
+  }
+
+  async assignAccountInfo(account: Signer) {
+    this.accountInfo = {
+      walletAddress: await account.getAddress(),
+    };
   }
 }

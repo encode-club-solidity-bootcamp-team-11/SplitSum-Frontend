@@ -2,6 +2,14 @@
   <div class="row py-lg-5">
     <div class="col-lg-6 col-md-8 mx-auto">
       <h1 class="fw-light">SplitSum</h1>
+      <div *ngIf="accountConnected()">
+        <span>Account address: {{ accountInfo?.walletAddress }}</span>
+      </div>
+      <div *ngIf="!accountConnected()">
+        <button class="btn btn-primary" (click)="Connect()">
+          Connect Wallet
+        </button>
+      </div>
       <p class="lead text-muted">
         Dolor nostrum distinctio neque vitae similique ut quia nulla dolor
         soluta eum sed at. Adipisci et quibusdam est veritatis est mollitia
@@ -14,7 +22,7 @@
   </div>
 </section>
 
-<section class="bg-light py-4 my-5">
+<section class="bg-light py-4 my-5" *ngIf="accountConnected()">
   <div class="container">
     <div class="row">
       <div class="col-md-6 col-lg-4" *ngFor="let item of groups">
