@@ -34,7 +34,7 @@ export class NewExpenseComponent implements OnInit {
     );
 
     if (result) {
-      this.router.navigate(['groups/:id', { id: this.groupId }]);
+      this.router.navigate([`groups/${this.groupId}`]);
     }
   }
 }
