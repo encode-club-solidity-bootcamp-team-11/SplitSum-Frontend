@@ -44,7 +44,12 @@
         >
           <ul>
             <li class="list-unstyled row mt-4 col-2">
-              <button class="btn btn-primary">+ Add Expense</button>
+              <button
+                class="btn btn-primary"
+                routerLink="/groups/{{ group.groupId }}/expenses/new"
+              >
+                + Add Expense
+              </button>
             </li>
 
             <li class="list-unstyled row mt-4">

@@ -54,4 +54,13 @@ export class ApiService {
   listGroups() {
     return [this.GROUPS['group-1'], this.GROUPS['group-2']];
   }
+
+  async createExpense(
+    groupId: string,
+    amount: number,
+    description: string,
+    members: string[]
+  ) {
+    return true;
+  }
 }

@@ -1,0 +1,49 @@
+<section class="bg-light py-4 my-5">
+  <div class="container">
+    <div class="row py-4 my-5">
+      <form (ngSubmit)="onClickSubmit()">
+        <div class="mb-3">
+          <label for="expense[amount]" class="form-label">Amount</label>
+          <input
+            type="number"
+            id="expense[amount]"
+            name="expenseAmount"
+            [(ngModel)]="expenseAmount"
+            class="form-control"
+            placeholder="100.00"
+            ngModel
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="expense[description]" class="form-label"
+            >Description</label
+          >
+          <input
+            type="text"
+            id="expense[descripiton]"
+            class="form-control"
+            name="expenseDescription"
+            [(ngModel)]="expenseDescription"
+          />
+        </div>
+
+        <div class="mb-3">
+          <label for="expense[description]" class="form-label">Members</label>
+          <select
+            class="form-select"
+            name="expenseMembers"
+            multiple
+            [(ngModel)]="expenseMembers"
+          >
+            <option value="1">David</option>
+            <option value="2">John</option>
+            <option value="3">Bob</option>
+          </select>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+  </div>
+</section>

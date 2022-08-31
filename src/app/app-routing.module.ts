@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './pages/dashboard/dashboard.component';
 import { GroupDetailsComponent } from './pages/group_details/group_details.component';
+import { NewExpenseComponent } from './pages/new_expense/new_expense.component';
 
 const routes: Routes = [
   {
@@ -11,6 +12,10 @@ const routes: Routes = [
   {
     path: 'groups/:id',
     component: GroupDetailsComponent,
+  },
+  {
+    path: 'groups/:groupId/expenses/new',
+    component: NewExpenseComponent,
   },
 ];
 @NgModule({
