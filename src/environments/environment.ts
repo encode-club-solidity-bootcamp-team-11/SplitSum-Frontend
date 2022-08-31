@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiAddress: 'http://localhost:3000',
+  apiAddress: 'http://127.0.0.1:5000/',
   settlementTokenContractAddress: '0x824C69A6918E6b13D73927B56ED38473191E61E0',
 };
 

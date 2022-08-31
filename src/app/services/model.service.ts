@@ -8,6 +8,7 @@ export interface IGroup {
 
 export interface IGroupMembership {
   walletAddress: string;
+  balance: number;
   name: string;
 }
 

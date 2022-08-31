@@ -5,7 +5,8 @@
   <div class="card-body">
     <div class="text-center">
       <p class="card-text">You are owed</p>
-      <h5 class="card-title text-success">$150.00</h5>
+      <h5 class="card-title" [ngClass]="userBalance > 0 ? 'text-success' : 'text-danger'"
+      >$ {{userBalance}}</h5>
     </div>
 
     <p class="card-text">{{ group.description }}</p>

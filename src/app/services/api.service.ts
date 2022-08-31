@@ -2,6 +2,9 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { ethers } from 'ethers';
 import { environment } from 'src/environments/environment';
+import { IGroup } from 'src/app/services/model.service';
+import { BlockchainService } from 'src/app/services/blockchain.service';
+
 
 @Injectable({
   providedIn: 'root',
@@ -43,16 +46,24 @@ export class ApiService {
     },
   };
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   getGroupDetails(groupId: string) {
-    return groupId == 'group-1'
-      ? this.GROUPS['group-1']
-      : this.GROUPS['group-2'];
+    // return groupId == 'group-1'
+    //   ? this.GROUPS['group-1']
+    //   : this.GROUPS['group-2'];
+      return this.http.get<IGroup>(`${this.apiUrl}groups/user`);
   }
 
-  listGroups() {
-    return [this.GROUPS['group-1'], this.GROUPS['group-2']];
+  async listGroups(user_address: string) {
+    // const user_info = await this.blockchainService.accountInfo();
+    // const user_address = await user_info.getAddress();
+    // (this.http.get<IGroup[]>(`${this.apiUrl}groups/user`, 
+    // {params:{'user_addr':user_address}})).subscribe((res) => {
+    //    console.log(res);
+    // });
+    return this.http.get<IGroup[]>(`${this.apiUrl}groups/user`, 
+    {params:{'user_addr':user_address}});
   }
 
   async createExpense(

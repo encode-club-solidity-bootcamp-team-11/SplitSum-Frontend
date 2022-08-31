@@ -14,8 +14,10 @@ export class GroupDetailsComponent implements OnInit {
   constructor(private apiService: ApiService, private route: ActivatedRoute) {}
 
   ngOnInit(): void {
-    this.group = this.apiService.getGroupDetails(
+    this.apiService.getGroupDetails(
       this.route.snapshot.paramMap.get('id')!
-    );
+    ).subscribe((res) => {
+      this.group = res;
+    });
   }
 }

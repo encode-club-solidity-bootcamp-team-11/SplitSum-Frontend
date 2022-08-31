@@ -11,6 +11,7 @@ import { GroupDetailsComponent } from './pages/group_details/group_details.compo
 import { NewExpenseComponent } from './pages/new_expense/new_expense.component';
 
 import { GroupBoxComponent } from './components/group_box/group_box.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,7 @@ import { GroupBoxComponent } from './components/group_box/group_box.component';
 
     GroupBoxComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })
