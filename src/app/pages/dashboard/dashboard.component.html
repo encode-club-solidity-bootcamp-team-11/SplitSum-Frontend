@@ -1,23 +1,16 @@
 <section class="py-5 text-center container">
   <div class="row py-lg-5">
     <div class="col-lg-6 col-md-8 mx-auto">
-      <h1 class="fw-light">SplitSum</h1>
-      <div *ngIf="accountConnected()">
-        <span>Account address: {{ accountInfo?.walletAddress }}</span>
-      </div>
-      <div *ngIf="!accountConnected()">
-        <button class="btn btn-primary" (click)="Connect()">
-          Connect Wallet
-        </button>
-      </div>
       <p class="lead text-muted">
-        Dolor nostrum distinctio neque vitae similique ut quia nulla dolor
-        soluta eum sed at. Adipisci et quibusdam est veritatis est mollitia
-        aperiam modi. Ut dolores cum qui ut nam in fugiat quod voluptate rerum
-        dolor optio. Sit ut qui praesentium. Amet fuga rerum sit rerum placeat
-        reiciendis enim ut sunt dolorem quo praesentium. Dolor aut molestiae ut
-        et non consequatur occaecati suscipit perspiciatis quo a aut rerum aut.
+        Keep track of your shared expenses and balances with housemates, trips,
+        groups, friends, and family.
       </p>
+    </div>
+
+    <div *ngIf="!accountConnected()">
+      <button class="btn btn-primary btn-lg" (click)="Connect()">
+        Connect Wallet
+      </button>
     </div>
   </div>
 </section>

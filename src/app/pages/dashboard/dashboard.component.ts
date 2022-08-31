@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Signer } from 'ethers';
 import { ApiService } from 'src/app/services/api.service';
 import { BlockchainService } from 'src/app/services/blockchain.service';
+import { IAccountInfo, IGroup } from 'src/app/services/model.service';
 
 @Component({
   selector: 'dashboard',
@@ -9,14 +10,8 @@ import { BlockchainService } from 'src/app/services/blockchain.service';
   styleUrls: ['./dashboard.component.scss'],
 })
 export class DashboardComponent implements OnInit {
-  groups: {
-    groupId: string;
-    name: string;
-    description: string;
-    ownerAddress: string;
-    memberships: { name: string; walletAddress: string }[];
-  }[] = [];
-  accountInfo: { walletAddress: string } | undefined = undefined;
+  groups: IGroup[] = [];
+  accountInfo?: IAccountInfo;
 
   constructor(
     private apiService: ApiService,
@@ -43,6 +38,7 @@ export class DashboardComponent implements OnInit {
 
   async assignAccountInfo(account: Signer) {
     this.accountInfo = {
+      name: 'Samnang',
       walletAddress: await account.getAddress(),
     };
   }

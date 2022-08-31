@@ -1,61 +1,138 @@
 <section class="bg-light py-4 my-5">
   <div class="container">
-    <div class="row">
+    <div class="row py-4 my-5">
       <group-box [group]="group"></group-box>
     </div>
-  </div>
-</section>
 
-<section class="bg-light py-4 my-5">
-  <div class="container">
     <div class="row">
-      <h2>Transactions</h2>
-      <hr />
-      <ul>
-        <li class="list-unstyled row mt-4">
-          <div class="col-8">
-            <div>
-              <span class="fw-bold">Samnang</span> paid on beers last night
-            </div>
-            <span class="text-muted me-4">2022-10-15</span>
-            <span><a routerLink="/groups/group-1">Friend Hangouts</a></span>
-          </div>
-          <div class="col-4">$100.00</div>
+      <ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link active"
+            id="transactions-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#transactions"
+            type="button"
+            role="tab"
+            aria-controls="transactions"
+            aria-selected="true"
+          >
+            Transactions
+          </button>
         </li>
-
-        <li class="list-unstyled row mt-4">
-          <div class="col-8">
-            <div>
-              <span class="fw-bold">Samnang</span> paid on beers last night
-            </div>
-            <span class="text-muted me-4">2022-10-15</span>
-            <span><a routerLink="/groups/group-1">Friend Hangouts</a></span>
-          </div>
-          <div class="col-4">$100.00</div>
+        <li class="nav-item" role="presentation">
+          <button
+            class="nav-link"
+            id="balances-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#balances"
+            type="button"
+            role="tab"
+            aria-controls="balances"
+            aria-selected="false"
+          >
+            Balances
+          </button>
         </li>
-
-        <li class="list-unstyled row mt-4">
-          <div class="col-8">
-            <div>
-              <span class="fw-bold">Samnang</span> paid on beers last night
-            </div>
-            <span class="text-muted me-4">2022-10-15</span>
-            <span><a routerLink="/groups/group-1">Friend Hangouts</a></span>
-          </div>
-          <div class="col-4">$100.00</div>
-        </li>
-
-        <li class="list-unstyled row mt-4">
-          <div class="col-8">
-            <div>
-              <span class="fw-bold">Samnang</span> paid on beers last night
-            </div>
-            <span class="text-muted me-4">2022-10-15</span>
-            <span><a routerLink="/groups/group-1">Friend Hangouts</a></span>
-          </div>
-          <div class="col-4">$100.00</div>
+        <li class="nav-item" role="presentation">
+          <button class="btn btn-primary">+ Add Expense</button>
         </li>
       </ul>
+      <div class="tab-content">
+        <div
+          class="tab-pane fade show active"
+          id="transactions"
+          role="tabpanel"
+          aria-labelledby="transactions-tab"
+        >
+          <ul>
+            <li class="list-unstyled row mt-4">
+              <div class="col">
+                <div>
+                  <span class="fw-bold">Samnang</span> paid on beers last night
+                </div>
+                <span class="text-muted me-4">2022-10-15</span>
+              </div>
+              <div class="col-1">$100.00</div>
+            </li>
+
+            <li class="list-unstyled row mt-4">
+              <div class="col">
+                <div>
+                  <span class="fw-bold">Samnang</span> paid on beers last night
+                </div>
+                <span class="text-muted me-4">2022-10-15</span>
+              </div>
+              <div class="col-1">$100.00</div>
+            </li>
+
+            <li class="list-unstyled row mt-4">
+              <div class="col">
+                <div>
+                  <span class="fw-bold">Samnang</span> paid on beers last night
+                </div>
+                <span class="text-muted me-4">2022-10-15</span>
+              </div>
+              <div class="col-1">$100.00</div>
+            </li>
+
+            <li class="list-unstyled row mt-4">
+              <div class="col">
+                <div>
+                  <span class="fw-bold">Samnang</span> paid on beers last night
+                </div>
+                <span class="text-muted me-4">2022-10-15</span>
+              </div>
+              <div class="col-1">$100.00</div>
+            </li>
+          </ul>
+        </div>
+        <div
+          class="tab-pane fade"
+          id="balances"
+          role="tabpanel"
+          aria-labelledby="balances-tab"
+        >
+          <ul>
+            <li class="list-unstyled row mt-4">
+              <div class="col">
+                <span class="fw-bold">Samnang</span>
+              </div>
+              <div class="col-2 text-end">
+                <button class="btn btn-outline-primary me-2">Settle Up</button>
+                <span class="text-danger">$-150.00</span>
+              </div>
+            </li>
+
+            <li class="list-unstyled row mt-4">
+              <div class="col">
+                <span class="fw-bold">John</span>
+              </div>
+              <div class="col-2 text-end">
+                <span class="text-success">$250.00</span>
+              </div>
+            </li>
+
+            <li class="list-unstyled row mt-4">
+              <div class="col">
+                <span class="fw-bold">Bob</span>
+              </div>
+              <div class="col-2 text-end">
+                <span class="text-success">$100.00</span>
+              </div>
+            </li>
+
+            <li class="list-unstyled row mt-4">
+              <div class="col">
+                <span class="fw-bold">David</span>
+              </div>
+              <div class="col-2 text-end">
+                <span class="text-danger">$-200.00</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </section>
