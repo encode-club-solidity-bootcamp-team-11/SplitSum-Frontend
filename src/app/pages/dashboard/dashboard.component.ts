@@ -20,6 +20,7 @@ export class DashboardComponent implements OnInit {
 
   async ngOnInit(): Promise<void> {
     this.groups = this.apiService.listGroups();
+
     if (await this.blockchainService.isAccountConnected()) {
       const account = await this.blockchainService.accountInfo();
       this.assignAccountInfo(account);

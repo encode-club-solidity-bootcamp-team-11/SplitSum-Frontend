@@ -8,9 +8,19 @@ import SplitSum from 'src/assets/contracts/SplitSum.json';
 })
 export class BlockchainService {
   provider: ethers.providers.Web3Provider;
+  contract?: ethers.Contract;
 
   constructor() {
     this.provider = new ethers.providers.Web3Provider((window as any).ethereum);
+  }
+
+  async initializeContract() {
+    if (await this.isAccountConnected()) {
+      this.contract = new ethers.Contract(
+        environment.settlementTokenContractAddress,
+        SplitSum.abi
+      ).connect(await this.accountInfo());
+    }
   }
 
   async isAccountConnected(): Promise<boolean> {
@@ -23,7 +33,10 @@ export class BlockchainService {
 
   async connectAccount(): Promise<Signer> {
     await this.provider.send('eth_requestAccounts', []);
+    await this.initializeContract();
 
     return await this.accountInfo();
   }
+
+  async settleUp(groupId: string) {}
 }

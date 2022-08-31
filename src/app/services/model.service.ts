@@ -15,3 +15,12 @@ export interface IAccountInfo {
   name?: string;
   walletAddress: string;
 }
+
+export interface IExpense {
+  expenseId: string;
+  paidByUserAddress: string;
+  amount: number;
+  description: string;
+  createdAtTimestamp: number;
+  memberships: IGroupMembership[];
+}
