@@ -1,27 +1,25 @@
-# SplitSumFrontEnd
+# SplitSum - Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.2.1.
+Split expenses with friends when you go hangouts or your holiday trips.
+
+<div align="center">
+  <a href="images/SplitSum-Wireframe.png">
+    <img src="images/SplitSum-Wireframe-Small.png" alt="SplitSum" width="75%">
+  </a>
+</div>
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+## Contributors
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+We love pull requests from everyone.
 
-## Build
+- [Samnang Chhun](https://github.com/samnang)
+- [Alphonso Miguel T. Balagtas](https://github.com/phonsoswag)
+- [Sereyboth Chamroeun](https://github.com/ch-sereyboth)
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## License
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+The software is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
